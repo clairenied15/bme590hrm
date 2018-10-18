@@ -7,8 +7,6 @@ np.set_printoptions(threshold=np.inf)
 import pandas as pd
 import scipy.signal as signal
 
-def main():
-	num_beats()
 
 def num_beats():
     count = 1
@@ -30,7 +28,5 @@ def num_beats():
     
 	#print(num_beats)
     #print(loc)
-    np.save('num_beats_bme590hrm.npz',array1=loc,array2=dif)
+    #np.save('num_beats_bme590hrm.npy',array1=loc,array2=dif)
     
-if __name__ == "__main__":
-    main()
