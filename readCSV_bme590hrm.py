@@ -9,5 +9,5 @@ def load_CSV():
     time = [float(i) for i in tme]
     volt = df.iloc[:,1]
     voltage = [float(i) for i in volt]
-    return tme, time, volt, voltage
+    return time, voltage
     #print(df)
