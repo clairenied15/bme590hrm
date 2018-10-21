@@ -1,6 +1,3 @@
-from readCSV_bme590hrm import voltage
-from readCSV_bme590hrm import volt
-from readCSV_bme590hrm import time
 import numpy as np
 from numpy import diff
 np.set_printoptions(threshold=np.inf)
@@ -8,7 +5,7 @@ import pandas as pd
 import scipy.signal as signal
 
 
-def n_beats(filtdat):
+def n_beats(time, filtdat):
     count = 1
     dt = diff(time)
     #dv = diff(voltage)
@@ -25,7 +22,5 @@ def n_beats(filtdat):
         if x > avdif:
             count += 1
     num_beats = count
-    #print(avdif)
+    #print(filtdat)
     return loc, dif, num_beats
-    
-    

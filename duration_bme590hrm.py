@@ -1,6 +1,4 @@
-from readCSV_bme590hrm import time
-
-def duration_hrm():
+def duration_hrm(time):
     duration = time[-1] - time[0]
     #print(time[-1])
     #print(time[0])
