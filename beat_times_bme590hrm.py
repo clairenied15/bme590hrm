@@ -1,8 +1,7 @@
 import numpy as np
 from numpy import diff
-from readCSV_bme590hrm import time
 
-def beat_times(loc,dif):
+def beat_times(time,loc,dif):
     locary = np.array(loc)
     loclist = locary.tolist()
     tmary = np.array(time)
