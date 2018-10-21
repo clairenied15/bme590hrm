@@ -6,6 +6,18 @@ import scipy.signal as signal
 
 
 def n_beats(time, filtdat):
+    """Find the number of beats in an ECG strip
+	
+	Args:
+	    time: array of time values from an ECG signal
+		filtdat: array of filtered voltage values from an ECG signal
+	
+	Returns:
+	    loc: tuple with the locations where the ECG signal slope is above a threshold
+		dif: tuple with the differences between the locations in "loc"
+		num_beats: number of detected heart beats in the ECG strip
+	
+	"""
     count = 1
     dt = diff(time)
     #dv = diff(voltage)
