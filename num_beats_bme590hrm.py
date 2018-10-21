@@ -8,10 +8,11 @@ import pandas as pd
 import scipy.signal as signal
 
 
-def num_beats():
+def n_beats(filtdat):
     count = 1
     dt = diff(time)
-    dv = diff(voltage)
+    #dv = diff(voltage)
+    dv = diff(filtdat)
     dvdt = dv/dt
     pos = [x for x in dvdt if x > 0]
     avg = np.mean(pos)
@@ -19,14 +20,12 @@ def num_beats():
     threshold = avg + 2*stdev
     loc = np.where(dvdt > threshold)
     dif = diff(loc)	
+    avdif = np.mean(dif)
     for x in np.nditer(dif):
-        if x > 3:
+        if x > avdif:
             count += 1
     num_beats = count
-    #df = pd.Series(volt)
-    #volt_corr = df.autocorr()
+    #print(avdif)
+    return loc, dif, num_beats
     
-	#print(num_beats)
-    #print(loc)
-    #np.save('num_beats_bme590hrm.npy',array1=loc,array2=dif)
     
