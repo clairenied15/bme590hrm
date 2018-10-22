@@ -5,7 +5,7 @@ def beat_times(time,loc,dif):
     """Find all of the corresponding times when a heartbeat occurred for a given ECG signal
 	
 	Args:
-	    time: array of time values for an ECG signal
+	    time: list of time values for an ECG signal
 		loc: tuple with the locations where the ECG signal slope is above a threshold
 		dif: tuple with the differences between the locations in "loc"
 	
@@ -27,7 +27,7 @@ def beat_times(time,loc,dif):
     tdif = diff(btime)
     avdif = np.mean(tdif)
     stdvdif = np.std(tdif)
-    thresh = avdif + stdvdif
+    thresh = avdif
     tloc = np.where(tdif > thresh)
     tloc = np.array(tloc)
     # add the last beat time to the array
@@ -41,7 +41,9 @@ def beat_times(time,loc,dif):
     for x in flat_tloc:
         beats.append(btime[x])
     # find where above the threshold and look at the location before that because peak of beat should be the last 
-    print(beats)
+    #print(beats)
+    #print(type(time))
+    #print(type(loc))
+    #print(type(dif))
     return beats
-            # find where x<3 and average each group 
-			# maybe make arays/lists for each beat
+    
