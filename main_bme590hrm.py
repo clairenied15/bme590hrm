@@ -8,6 +8,9 @@ from readCSV_bme590hrm import load_CSV
 from volt_extremes_bme590hrm import volt_extremes
 
 def main():
+    """Run all of the functions to find the mean heart rate, voltage extremes, duration, number of beats, and beat times for an imported ECG signal
+	
+	"""
     time, voltage = load_CSV()
     fs = 1000.0
     lowcut = 0.5
