@@ -20,4 +20,4 @@ def load_CSV():
     volt = df.iloc[:,1]
     voltage = [float(i) for i in volt]
     #print(type(voltage))
-    return time, voltage, filename
+    return time, voltage, filename, df
