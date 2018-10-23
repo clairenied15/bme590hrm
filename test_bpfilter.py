@@ -10,7 +10,7 @@ def test_filter():
     #t = [float(i) for i in tm]
     t = np.arange(0,10,0.1)
     for x in t:
-        voltage = sin(2*pi*freq*x)
+        voltage = np.sin(2*pi*freq*x)
     lowcut = 0.5
     highcut = 150
     fs = 500
