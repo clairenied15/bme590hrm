@@ -10,5 +10,6 @@ def mean_bpm(num_beats,duration):
 	
 	"""
     bps = num_beats/duration
-    bpm = bps*60
-    print(num_beats)
+    mean_hr_bpm = bps*60
+    #print(type(mean_hr_bpm))
+    return mean_hr_bpm

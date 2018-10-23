@@ -9,8 +9,8 @@ def load_CSV():
 	    None
 	
 	Returns:
-	    time: an array of the time data
-		voltage: an array of the voltage data 
+	    time: a list of the time data
+		voltage: a list of the voltage data 
 		
 	"""
     filename = 'test_data1.csv'
@@ -19,5 +19,5 @@ def load_CSV():
     time = [float(i) for i in tme]
     volt = df.iloc[:,1]
     voltage = [float(i) for i in volt]
-    return time, voltage
-    #print(df)
+    #print(type(voltage))
+    return time, voltage, filename, df
