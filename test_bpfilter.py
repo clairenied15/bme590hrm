@@ -8,12 +8,12 @@ def test_filter():
     #x2 = 10
     #tm = [x*0.2 for x in range(2*x1, 2*x2+1)]
     #t = [float(i) for i in tm]
-    t = np.arange(0,10,0.1)
-    for x in t:
-        voltage = np.sin(2*pi*freq*x)
-    voltage = np.transpose(voltage)
+    t = np.arange(0,5*pi,pi/4)
+    voltage = np.sin(2*pi*freq*t)
+    #voltage = np.transpose(voltage)
     lowcut = 0.5
     highcut = 150
     fs = 500
     s = butter_bandpass_filter(voltage, lowcut, highcut, fs, order=5)
-    assert s == voltage
+    print(s)
+    assert np.absolute(s.all()) == 1
