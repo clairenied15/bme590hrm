@@ -11,6 +11,7 @@ def test_filter():
     t = np.arange(0,10,0.1)
     for x in t:
         voltage = np.sin(2*pi*freq*x)
+    voltage = np.transpose(voltage)
     lowcut = 0.5
     highcut = 150
     fs = 500
