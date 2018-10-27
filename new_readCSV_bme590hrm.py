@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 from pandas import read_csv
 
-def load_CSV():
+def new_load_CSV(filename):
     """ Load in a csv file with time and voltage ECG data
 	
 	Args:
@@ -13,7 +13,6 @@ def load_CSV():
 		voltage: a list of the voltage data 
 		
 	"""
-    filename = 'test_data10.csv'
     df = pd.read_csv(filename, delimiter = ',', header = None)
     l = len(df.columns)
     tme = df.iloc[:,0]
@@ -21,4 +20,4 @@ def load_CSV():
     volt = df.iloc[:,1]
     voltage = [float(i) for i in volt]
     #print(type(voltage))
-    return time, voltage, filename, df
+    return time, voltage, df
