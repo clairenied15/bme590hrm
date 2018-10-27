@@ -27,7 +27,10 @@ def main():
     loc, dif, num_beats = n_beats(time,filtdat)
     beats = beat_times(time, loc, dif)
     duration = duration_hrm(time)
-    mean_hr_bpm = mean_bpm(num_beats, duration)
+    try:
+        mean_hr_bpm = mean_bpm(num_beats, duration)
+    except TypeError:
+        mean_hr_bpm = mean_bpm(num_beats, duration)
     hrm_dictionary(beats, num_beats, duration, voltage_extremes, mean_hr_bpm, filename)
 	
 if __name__ == "__main__":
