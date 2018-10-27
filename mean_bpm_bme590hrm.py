@@ -9,7 +9,14 @@ def mean_bpm(num_beats,duration):
 	    bpm: average heart rate in beats per minute
 	
 	"""
-    bps = num_beats/duration
+    min = input("Input number of minutes")
+    if type(min) is not int and type(min) is not float
+        raise TypeError("Input must be an int or float")
+    sec = min * 60
+    ratio = sec/duration
+    nbeats = num_beats * ratio
+    dur = duration * ratio
+    bps = nbeats/dur
     mean_hr_bpm = bps*60
     #print(type(mean_hr_bpm))
     return mean_hr_bpm
