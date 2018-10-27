@@ -13,8 +13,9 @@ def load_CSV():
 		voltage: a list of the voltage data 
 		
 	"""
-    filename = 'test_data1.csv'
+    filename = 'test_data10.csv'
     df = pd.read_csv(filename, delimiter = ',', header = None)
+    l = len(df.columns)
     tme = df.iloc[:,0]
     time = [float(i) for i in tme]
     volt = df.iloc[:,1]
