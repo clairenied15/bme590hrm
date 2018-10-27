@@ -1,8 +1,8 @@
 # bme590hrm
 The heart rate monitor is made up of multiple py files:
 
-readCSV_bme590hrm.py (reads time and voltage data from a CSV file),
-bpfilter_bme590hrm.py (filters voltage data using a butterworth bandpass filter),
+  readCSV_bme590hrm.py (reads time and voltage data from a CSV file),
+  bpfilter_bme590hrm.py (filters voltage data using a butterworth bandpass filter),
 duration_bme590hrm.py (finds the duration of the ECG strip),
 volt_extremes_bme590hrm.py (finds the maximum and minimum voltages in the ECG strip),
 beat_times_bme590hrm.py (finds the time when each beat occurred),
