@@ -5,6 +5,7 @@ from beat_times_bme590hrm import beat_times
 from mean_bpm_bme590hrm import mean_bpm
 from duration_bme590hrm import duration_hrm
 from readCSV_bme590hrm import load_CSV
+from new_readCSV_bme590hrm import new_load_CSV
 from volt_extremes_bme590hrm import volt_extremes
 from dictionary_bme590hrm import hrm_dictionary
 
@@ -12,7 +13,11 @@ def main():
     """Run all of the functions to find the mean heart rate, voltage extremes, duration, number of beats, and beat times for an imported ECG signal
 	
 	"""
-    time, voltage, filename, df = load_CSV()
+    try:
+        time, voltage, filename, df = load_CSV()
+    except FileNotFoundError:
+        filename = input("Input filename  ")
+        time, voltage, df = new_load_CSV(filename)
     fs = 1000.0
     lowcut = 0.5
     highcut = 150.0
