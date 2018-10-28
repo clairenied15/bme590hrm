@@ -1,4 +1,4 @@
-def mean_bpm(num_beats, duration):
+def mean_bpm(inmin=None, num_beats, duration):
     """Find the average heart rate (in bpm) for a given ECG signal
 
         Args:
@@ -9,7 +9,8 @@ def mean_bpm(num_beats, duration):
             bpm: average heart rate in beats per minute
 
         """
-    inmin = input("Input number of minutes   ")
+    if inmin is None:
+        inmin = input("Input number of minutes   ")
     print(type(inmin))
     if inmin.isalpha():
         raise TypeError("Input must be a number")
