@@ -1,18 +1,19 @@
 from scipy.signal import butter, lfilter
 
+
 def butter_bandpass(lowcut, highcut, fs, order=5):
     """Create a butterworth bandpass filter
-	
-	Args:
-	    lowcut: low frequency cutoff
-		highcut: high frequency cutoff
-		fs: sampling frequency
-		order: filter order (power)
-	
-	Returns:
-	    b, a: butterworth bandpass filter coefficients
-	
-	"""
+
+        Args:
+            lowcut: low frequency cutoff
+            highcut: high frequency cutoff
+            fs: sampling frequency
+            order: filter order (power)
+
+        Returns:
+            b, a: butterworth bandpass filter coefficients
+
+    """
     nyq = 0.5 * fs
     low = lowcut / nyq
     high = highcut / nyq
@@ -37,8 +38,3 @@ def butter_bandpass_filter(voltage, lowcut, highcut, fs, order=5):
     b, a = butter_bandpass(lowcut, highcut, fs, order=order)
     filtdat = lfilter(b, a, voltage)
     return filtdat
-
-    # Sample rate and desired cutoff frequencies (in Hz).
-    fs = 1000.0
-    lowcut = 0.5
-    highcut = 150.0
