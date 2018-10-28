@@ -1,8 +1,8 @@
 import json
 
 
-def hrm_dictionary(beats, num_beats, duration, voltage_extremes, 
-                    mean_hr_bpm, filename):
+def hrm_dictionary(beats, num_beats, duration, voltage_extremes,
+mean_hr_bpm, filename):
     """Create a dictionary with the different values found for the ECG signal
 
         Args:
@@ -22,8 +22,8 @@ def hrm_dictionary(beats, num_beats, duration, voltage_extremes,
         "beats (numpy array of times when a beat occurred)": beats,
         "num_beats (number of detected beats in the ECG strip)": num_beats,
         "duration (time duration of the ECG strip)": duration,
-        "voltage_extremes (tuple containing minimum and maximum lead voltages)":
-            voltage_extremes,
+        "voltage_extremes (tuple containing minimum and maximum lead voltages)"
+        : voltage_extremes,
         "mean_hr_bpm (estimated average heart rate)": mean_hr_bpm
         }
     jname = filename + ".json"
