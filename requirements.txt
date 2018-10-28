@@ -1,4 +1,6 @@
-numpy
+numpy 
+scipy
+pandas
 ipython
 pytest
 pytest-pep8
