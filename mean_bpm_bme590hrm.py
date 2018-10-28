@@ -12,7 +12,9 @@ def mean_bpm(num_beats, duration, inmin=None):
     if inmin is None:
         inmin = input("Input number of minutes   ")
     print(type(inmin))
-    if inmin.isalpha():
+    # if inmin.isalpha():
+        # raise TypeError("Input must be a number")
+    if type(inmin) is not int and type(inmin) is not float:
         raise TypeError("Input must be a number")
     inmin = float(inmin)
     sec = inmin * 60
