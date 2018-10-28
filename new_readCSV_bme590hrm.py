@@ -11,14 +11,14 @@ def new_load_CSV(filename):
 
         Returns:
             time: a list of the time data
-            voltage: a list of the voltage data 
+            voltage: a list of the voltage data
 
     """
-    df = pd.read_csv(filename, delimiter = ',', header = None)
+    df = pd.read_csv(filename, delimiter=',', header=None)
     l = len(df.columns)
-    tme = df.iloc[:,0]
+    tme = df.iloc[:, 0]
     time = [float(i) for i in tme]
-    volt = df.iloc[:,1]
+    volt = df.iloc[:, 1]
     voltage = [float(i) for i in volt]
     # print(type(voltage))
     return time, voltage, df
