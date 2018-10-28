@@ -35,7 +35,7 @@ def main():
     except TypeError:
         mean_hr_bpm = mean_bpm(num_beats, duration)
     hrm_dictionary(beats, num_beats, duration, voltage_extremes,
-		   mean_hr_bpm, filename)
-	
+                   mean_hr_bpm, filename)
+
 if __name__ == "__main__":
     main()
