@@ -4,11 +4,11 @@ def volt_extremes(filtdat):
 
         Args:
             filtdat: array of filtered voltage values from
-	    imported ECG signal
+            imported ECG signal
 
         Returns:
             voltage_extremes: tuple containing minimum and
-	    maximum lead voltages from ECG signal
+            maximum lead voltages from ECG signal
 
     """
     max_volt = max(filtdat)
