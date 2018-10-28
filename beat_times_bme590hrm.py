@@ -3,15 +3,15 @@ from numpy import diff
 
 
 def beat_times(time, loc, dif):
-    """Find all of the corresponding times when a heartbeat 
+    """Find all of the corresponding times when a heartbeat
         occurred for a given ECG signal
 
         Args:
             time: list of time values for an ECG signal
-            loc: tuple with the locations where the ECG 
+            loc: tuple with the locations where the ECG
                 signal slope is above a threshold
             dif: tuple with the differences between the locations in "loc"
-	
+
         Returns:
             beats: numpy array of times when a heartbeat occurred
 
