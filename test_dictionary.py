@@ -8,11 +8,11 @@ def test_json():
                        (-0.54, 4.68), 52.083, "testdat.csv")
     expected_data = {
         "beats (numpy array of times when a beat occurred)":
-                [1, 2.1, 3.2, 4.4, 5.3],
+        [1, 2.1, 3.2, 4.4, 5.3],
         "num_beats (number of detected beats in the ECG strip)": 5,
         "duration (time duration of the ECG strip)": 5.76,
         "voltage_extremes (tuple when minimum and maximum lead voltages)":
-                           [-0.54, 4.68],
+        [-0.54, 4.68],
         "mean_hr_bpm (estimated average heart rate)": 52.083
         }
     with open(s) as f:
