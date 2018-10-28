@@ -8,4 +8,3 @@ def test_read_CSV():
     df = s[3]
     numcols = len(df.columns)
     assert numcols == 2
-    
