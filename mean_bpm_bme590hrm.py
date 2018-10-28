@@ -1,4 +1,4 @@
-def mean_bpm(inmin=None, num_beats, duration):
+def mean_bpm(num_beats, duration, inmin=None):
     """Find the average heart rate (in bpm) for a given ECG signal
 
         Args:
