@@ -1,19 +1,19 @@
 import numpy as np
 from numpy import diff
 
+
 def beat_times(time,loc,dif):
     """Find all of the corresponding times when a heartbeat occurred for a given ECG signal
 	
-	Args:
-	    time: list of time values for an ECG signal
-		loc: tuple with the locations where the ECG signal slope is above a threshold
-		dif: tuple with the differences between the locations in "loc"
+        Args:
+            time: list of time values for an ECG signal
+            loc: tuple with the locations where the ECG signal slope is above a threshold
+            dif: tuple with the differences between the locations in "loc"
 	
-	Returns:
-	    beats: numpy array of times when a heartbeat occurred
-	    
-	
-	"""
+        Returns:
+            beats: numpy array of times when a heartbeat occurred
+
+        """
     locary = np.array(loc)
     loclist = locary.tolist()
     tmary = np.array(time)
@@ -40,10 +40,8 @@ def beat_times(time,loc,dif):
     beats = []
     for x in flat_tloc:
         beats.append(btime[x])
-    # find where above the threshold and look at the location before that because peak of beat should be the last 
-    #print(beats)
-    #print(type(time))
-    #print(type(loc))
-    #print(type(dif))
+    # print(beats)
+    # print(type(time))
+    # print(type(loc))
+    # print(type(dif))
     return beats
-    
