@@ -31,9 +31,9 @@ def main():
     beats = beat_times(time, loc, dif)
     duration = duration_hrm(time)
     try:
-        mean_hr_bpm = mean_bpm(num_beats, duration)
+        mean_hr_bpm = mean_bpm(inmin=None, num_beats, duration)
     except TypeError:
-        mean_hr_bpm = mean_bpm(num_beats, duration)
+        mean_hr_bpm = mean_bpm(inmin=None, num_beats, duration)
     hrm_dictionary(beats, num_beats, duration, voltage_extremes,
                    mean_hr_bpm, filename)
 
