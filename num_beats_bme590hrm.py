@@ -1,8 +1,8 @@
 import numpy as np
-from numpy import diff
-np.set_printoptions(threshold=np.inf)
 import pandas as pd
 import scipy.signal as signal
+from numpy import diff
+np.set_printoptions(threshold=np.inf)
 
 
 def n_beats(time, filtdat):
@@ -13,19 +13,20 @@ def n_beats(time, filtdat):
             filtdat: array of filtered voltage values from an ECG signal
 
         Returns:
-            loc: tuple with the locations where the ECG signal slope is above a threshold
+            loc: tuple with the locations where the ECG signal slope is
+            above a threshold
             dif: tuple with the differences between the locations in "loc"
             num_beats: number of detected heart beats in the ECG strip
 
     """
     count = 1
     dt = diff(time)
-    #dv = diff(voltage)
+    # dv = diff(voltage)
     dv = diff(filtdat)
     dvdt = dv/dt
     # print(dvdt)
     pos = [x for x in dvdt if x > 0]
-    #print(pos)
+    # print(pos)
     avg = np.mean(pos)
     stdev = np.std(pos)
     threshold = avg + stdev
