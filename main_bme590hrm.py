@@ -9,10 +9,13 @@ from new_readCSV_bme590hrm import new_load_CSV
 from volt_extremes_bme590hrm import volt_extremes
 from dictionary_bme590hrm import hrm_dictionary
 
+
 def main():
-    """Run all of the functions to find the mean heart rate, voltage extremes, duration, number of beats, and beat times for an imported ECG signal
-	
-	"""
+    """Run all of the functions to find the mean heart rate,
+    voltage extremes, duration, number of beats, and beat times
+    for an imported ECG signal
+
+    """
     try:
         time, voltage, filename, df = load_CSV()
     except FileNotFoundError:
@@ -24,14 +27,15 @@ def main():
     butter_bandpass(lowcut, highcut, fs, order=5)
     filtdat = butter_bandpass_filter(voltage, lowcut, highcut, fs, order=5)
     voltage_extremes = volt_extremes(filtdat)
-    loc, dif, num_beats = n_beats(time,filtdat)
+    loc, dif, num_beats = n_beats(time, filtdat)
     beats = beat_times(time, loc, dif)
     duration = duration_hrm(time)
     try:
         mean_hr_bpm = mean_bpm(num_beats, duration)
     except TypeError:
         mean_hr_bpm = mean_bpm(num_beats, duration)
-    hrm_dictionary(beats, num_beats, duration, voltage_extremes, mean_hr_bpm, filename)
+    hrm_dictionary(beats, num_beats, duration, voltage_extremes,
+		   mean_hr_bpm, filename)
 	
 if __name__ == "__main__":
     main()
